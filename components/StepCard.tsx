@@ -61,7 +61,7 @@ export default function StepCard({
               size={18}
               className="text-zinc-500 mt-0.5 flex-shrink-0"
             />
-            <div className="w-full">
+            <div className="w-full overflow-hidden">
               <p className="text-sm font-medium text-zinc-700 mb-2">
                 Verification
               </p>

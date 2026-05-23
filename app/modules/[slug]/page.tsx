@@ -53,35 +53,35 @@ export default function ModuleGuidePage({
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-zinc-200 sticky top-0 bg-white z-10">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-lg font-semibold text-zinc-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          <Link href="/" className="text-lg font-semibold text-zinc-900 shrink-0">
             NetGuide
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4 text-sm">
             <Link
               href="/modules"
-              className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+              className="text-zinc-500 hover:text-zinc-900 transition-colors"
             >
               Modules
             </Link>
             <Link
               href="/contribute"
-              className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+              className="hidden sm:inline text-zinc-500 hover:text-zinc-900 transition-colors"
             >
               Contribute
             </Link>
-            <span className="text-zinc-300">|</span>
-            <span className="text-sm text-zinc-900 font-medium">
+            <span className="text-zinc-300 hidden sm:inline">|</span>
+            <span className="text-zinc-900 font-medium truncate max-w-[120px] sm:max-w-none">
               {mod.title}
             </span>
           </div>
         </div>
       </header>
 
-      <main className="flex-1 max-w-6xl mx-auto px-6 py-10 flex gap-12">
+      <main className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
         <Sidebar module={mod} activeStep={activeStep} />
 
-        <div className="flex-1 min-w-0 max-w-3xl">
+        <div className="flex-1 min-w-0">
           <PktDownload
             starterFile={mod.downloads.starter}
             completeFile={mod.downloads.complete}
@@ -153,11 +153,13 @@ export default function ModuleGuidePage({
         </div>
       </main>
 
-      <footer className="border-t border-zinc-200">
-        <div className="max-w-6xl mx-auto px-6 py-6">
-          <p className="text-sm text-zinc-400 text-center">
-            NetGuide | IIUM KICT Student Project 2026
-          </p>
+      <footer className="border-t border-zinc-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          <div className="flex items-baseline">
+            <span className="font-black text-sm text-zinc-900">NetGuide</span>
+            <span className="text-xs font-mono text-blue-600 ml-1 align-super">beta</span>
+          </div>
+          <span className="text-xs text-zinc-400">IIUM KICT Student Project 2026</span>
         </div>
       </footer>
     </div>

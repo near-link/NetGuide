@@ -13,7 +13,7 @@ export default function CLIBlock({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative rounded-lg overflow-hidden border border-zinc-800">
+    <div className="relative rounded-lg overflow-hidden border border-zinc-800 max-w-full">
       <div className="flex items-center justify-between px-4 py-2 bg-zinc-800 border-b border-zinc-700">
         <span className="text-xs text-zinc-400 font-mono">CLI</span>
         <button
