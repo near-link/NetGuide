@@ -103,7 +103,7 @@ export default function ContributePage() {
             on GitHub. You can open a pull request to add a module, fix an error,
             or improve the platform.
           </p>
-          {/* TODO: replace with actual repo URL */}
+          {https://github.com/near-link/NetGuide}
           <Link
             href="#"
             className="text-sm text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 transition-colors"
