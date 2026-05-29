@@ -1,4 +1,4 @@
-# NetGuide
+# NetGuide - Open Contribution Learning Platform
 
 Interactive learning platform for Cisco enterprise networking.
 Built for our CCNA Enterprise Networking project at IIUM KICT.
