@@ -3,7 +3,7 @@
 Interactive learning platform for Cisco enterprise networking.
 Built for our CCNA Enterprise Networking project at IIUM KICT.
 
-## Modules
+## Premade Modules
 
 - Inter-VLAN Routing
 - OSPF Dynamic Routing
