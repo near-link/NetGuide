@@ -3,6 +3,8 @@
 Interactive learning platform for Cisco enterprise networking.
 Built for our CCNA Enterprise Networking project at IIUM KICT.
 
+![NetGuide Platform Architecture](public/architecture.png)
+
 ## Premade Modules
 
 - Inter-VLAN Routing

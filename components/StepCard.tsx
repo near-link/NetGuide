@@ -24,12 +24,21 @@ export default function StepCard({
       <p className="text-zinc-600 leading-relaxed mb-6">{step.explanation}</p>
 
       {step.topologyDiagram && (
-        <div className="border-2 border-dashed border-zinc-300 bg-zinc-50 rounded-lg p-8 flex items-center justify-center mb-6">
-          <span className="text-sm text-zinc-400">
-            {/* TODO: replace with actual Packet Tracer screenshot */}
-            [Topology Diagram: Step {stepNumber}]
-          </span>
-        </div>
+        step.topologyImage ? (
+          <div className="border border-zinc-200 bg-zinc-50 rounded-lg overflow-hidden mb-6">
+            <img
+              src={step.topologyImage}
+              alt={`Topology diagram for ${step.title}`}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        ) : (
+          <div className="border-2 border-dashed border-zinc-300 bg-zinc-50 rounded-lg p-8 flex items-center justify-center mb-6">
+            <span className="text-sm text-zinc-400">
+              [Topology Diagram: Step {stepNumber}]
+            </span>
+          </div>
+        )
       )}
 
       {step.cli && (

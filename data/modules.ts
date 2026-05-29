@@ -2,6 +2,7 @@ export interface Step {
   title: string;
   explanation: string;
   topologyDiagram?: boolean;
+  topologyImage?: string;
   cli?: string;
   whatThisDoes?: string;
   verification?: string;
@@ -109,6 +110,7 @@ export const modules: Module[] = [
         explanation:
           "In this module, we work with a simple campus network: 1 Router, 1 Switch, and 3 VLANs representing IT (VLAN 10), HR (VLAN 20), and Finance (VLAN 30). Each VLAN has 3 PCs, making 9 PCs total. The router connects to the switch via a single trunk link and uses subinterfaces to route between VLANs. This is called Router-on-a-Stick (ROAS).",
         topologyDiagram: true,
+        topologyImage: "/screenshots/module1-topology.jpg",
       },
       {
         title: "Creating VLANs on the Switch",
@@ -307,6 +309,7 @@ PC1 (VLAN 10)> ping 192.168.30.2`,
         explanation:
           "OSPF (Open Shortest Path First) is a link-state routing protocol. It lets routers automatically learn about networks they're not directly connected to. In this lab, we have three routers (R1, R2, R3) connected in a triangle. Each router has a LAN segment with its own subnet. All interfaces are in OSPF Area 0.",
         topologyDiagram: true,
+        topologyImage: "/screenshots/module2-topology.png",
       },
       {
         title: "Assigning IP Addresses to Router Interfaces",
@@ -383,6 +386,7 @@ Router# show ip ospf interface brief`,
         explanation:
           "The real test: can devices on different LANs reach each other through OSPF-learned routes? We ping from a PC on R1's LAN to a PC on R3's LAN.",
         topologyDiagram: true,
+        topologyImage: "/screenshots/module2-connectivity.png",
         verification: `PC on R1 LAN> ping 192.168.3.10
 PC on R1 LAN> ping 192.168.2.10`,
         verificationNote:
@@ -490,6 +494,7 @@ Router# debug ip ospf adj`,
         explanation:
           "Access Control Lists (ACLs) are packet filters. They inspect traffic and decide whether to permit or deny it based on rules you define. Standard ACLs filter by source IP only. Extended ACLs can filter by source IP, destination IP, protocol, and port number. We'll use extended ACLs because they give us more control.",
         topologyDiagram: true,
+        topologyImage: "/screenshots/module3-topology.jpg",
       },
       {
         title: "Planning the ACL Policy",
@@ -534,6 +539,7 @@ Router# show ip interface fa0/0.30`,
         explanation:
           "Final test. Ping from a Finance PC (VLAN 30) to an HR PC (VLAN 20). It should fail. Then ping from Finance to IT (VLAN 10). It should succeed. This confirms the ACL is blocking only the intended traffic.",
         topologyDiagram: true,
+        topologyImage: "/screenshots/module3-acl-test.png",
         verification: `! This should FAIL
 PC (VLAN 30)> ping 192.168.20.2
 
