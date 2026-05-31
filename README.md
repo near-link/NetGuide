@@ -3,6 +3,10 @@
 Interactive learning platform for Cisco enterprise networking.
 Built for our CCNA Enterprise Networking project at IIUM KICT.
 
+![NetGuide Homepage](public/homepage.png)
+
+## Architecture
+
 ![NetGuide Platform Architecture](public/architecture.png)
 
 ## Premade Modules
