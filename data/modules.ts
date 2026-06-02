@@ -220,8 +220,8 @@ Switch# show vlan brief
 Switch# show interfaces trunk`,
         whatThisDoes:
           "These show commands confirm that subinterfaces are up, routes exist for each subnet, VLANs are assigned to the correct ports, and the trunk is carrying all three VLANs.",
-        verification: `PC1 (VLAN 10)> ping 192.168.20.2
-PC1 (VLAN 10)> ping 192.168.30.2`,
+        verification: `PC1 (VLAN 10)> ping 192.168.20.10
+PC1 (VLAN 10)> ping 192.168.30.10`,
         verificationNote:
           "If everything is configured correctly, pings between VLANs should succeed. If they fail, check trunk configuration, subinterface status, and DHCP assignments.",
       },
@@ -541,13 +541,13 @@ Router# show ip interface fa0/0.30`,
         topologyDiagram: true,
         topologyImage: "/screenshots/module3-acl-test.png",
         verification: `! This should FAIL
-PC (VLAN 30)> ping 192.168.20.2
+PC (VLAN 30)> ping 192.168.20.10
 
 ! This should SUCCEED
-PC (VLAN 30)> ping 192.168.10.2
+PC (VLAN 30)> ping 192.168.10.10
 
 ! This should SUCCEED
-PC (VLAN 10)> ping 192.168.20.2`,
+PC (VLAN 10)> ping 192.168.20.10`,
         verificationNote:
           "If Finance can still reach HR, check that the ACL is applied to the correct interface and direction. Run 'show ip access-lists' to see if the deny rule is matching packets.",
       },
